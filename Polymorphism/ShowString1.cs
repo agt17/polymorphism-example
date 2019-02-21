@@ -8,19 +8,24 @@ namespace Polymorphism
 {
     public class ShowString1 : ShowStringBase
     {
-        public override void PrintString(string message)
+        public override void PrintStringOverloadExample(string message)
         {
             Console.WriteLine("Message 1: " + message);
         }
 
-        public void PrintString(string message1, string message2)
+        public void PrintStringOverloadExample(string message1, string message2)
         {
             Console.WriteLine("Other message 1: " + message1 + " " + message2);
         }
 
         public new void PrintStringNewExample()
         {
-            Console.WriteLine("Message from extended class");
+            Console.WriteLine("Message from derived class");
+        }
+
+        public override void PrintStringOverride()
+        {
+            Console.WriteLine("Message with override at derived class");
         }
     }
 }

@@ -13,22 +13,26 @@ namespace Polymorphism
             ShowString1 showOverload = new ShowString1();
             // Overload Example
             Console.WriteLine("Overload example");
-            showOverload.PrintString("Hello!");
-            showOverload.PrintString("Hello", "world!");
+            showOverload.PrintStringOverloadExample("Hello!");
+            showOverload.PrintStringOverloadExample("Hello", "world!");
+            Console.WriteLine("");
+
+            // Override example
+            ShowStringBase showOverrideExample = new ShowString1();
+            Console.WriteLine("Override example");
+            showOverrideExample.PrintStringOverride();
+            Console.WriteLine("");
 
             // New example
             ShowStringBase showNewExample = new ShowString1();
             Console.WriteLine("New example");
             showNewExample.PrintStringNewExample();
+            Console.WriteLine("");
 
-            /*
-            ShowStringBase showString;
-            showString = new ShowString1();
-            showString.PrintString("Hello!");
+            Console.WriteLine("New example with cast to derived class");
+            ((ShowString1)showNewExample).PrintStringNewExample();
 
-            showString = new ShowString2();
-            showString.PrintString("Hello!");
-            */
+            Console.ReadKey();
         }
     }
 }
